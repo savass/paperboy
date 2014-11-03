@@ -172,7 +172,9 @@ def jobOption(name, index):
 
 
 def deleteJob(index):
-    jobs_handler.deleteJob(index)
+    global jobs
+    jobs_handler.deleteJob(jobs[index])
+    loadJobs()
     listJobs()
 
 
