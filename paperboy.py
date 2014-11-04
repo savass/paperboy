@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import jobs_handler
 import time
 import jobs_executor
@@ -34,7 +35,7 @@ while True:
             print "job excecution time %s" % (job.nextExecution)
             if jobs_executor.execJob(job):
                 time.sleep(60)
-                executiontime_calculator.calculateNextExecution(job)
+                executiontime_calculator.calculateNextExecution(job, now)
                 print "new job excecution time %s" % (job.nextExecution)
             else:
                 print "Error in the execution"
